@@ -8,6 +8,10 @@ import Missing from "./components/Missing";
 import { Route, Routes } from "react-router-dom";
 import { DataProvider } from "./context/DataContext";
 
+// ! todo edit handle delete
+// ! todo edit adding post
+// ! todo try to add loading until the posts came from api
+
 function App() {
 	// jsx
 	return (

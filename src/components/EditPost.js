@@ -24,14 +24,30 @@ const EditPost = () => {
 			datetime,
 			body: editBody,
 		};
+		const updatedPostsArray = posts.map((post) =>
+			post.id.toString() === id ? updatedPost : post
+		);
+		//! console.log(updatedPostsArray);
 		try {
-			const response = await api.put(`/posts/${id}`, updatedPost);
+			// const response = await api.put(`/posts/${id}`, updatedPost, {
+			const response = await api.put("/?meta=false", updatedPostsArray, {
+				headers: {
+					"Content-Type": "application/json",
+					"X-Master-Key":
+						"$2b$10$8af8yHYa/LJMqrWJLC/6iu29hjtZua92yI8.vlPwWZBj/SE4kz4TO",
+					"X-Access-Key":
+						"$2b$10$DQz6C.Oi0RiKI0DsXfxykejGH0qpGf/dob3KYU9Xni0xBZ2dUWwEa",
+				},
+			});
 
-			setPosts(
-				posts.map((post) =>
-					post.id.toString() === id ? { ...response.data } : post
-				)
-			);
+			console.log(response);
+
+			setPosts(response.data.record);
+			// setPosts(
+			// 	posts.map((post) =>
+			// 		post.id.toString() === id ? { ...response.data.record.posts } : post
+			// 	)
+			// );
 			setEditTitle("");
 			setEditBody("");
 			navigate(`/post/${id}`);

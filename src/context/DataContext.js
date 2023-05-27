@@ -17,8 +17,17 @@ export const DataProvider = ({ children }) => {
 	useEffect(() => {
 		const fetchPosts = async () => {
 			try {
-				const reponse = await api.get("/posts");
-				setPosts(reponse.data);
+				const response = await api.get("/latest?meta=false", {
+					headers: {
+						"X-Master-Key":
+							"$2b$10$8af8yHYa/LJMqrWJLC/6iu29hjtZua92yI8.vlPwWZBj/SE4kz4TO",
+						"X-Access-Key":
+							"$2b$10$DQz6C.Oi0RiKI0DsXfxykejGH0qpGf/dob3KYU9Xni0xBZ2dUWwEa",
+						"Content-Type": "application/json",
+					},
+				});
+				// console.log(response);
+				setPosts(response.data);
 			} catch (err) {
 				console.log(err.reponse.data);
 				console.log(err.reponse.this.status);
@@ -27,6 +36,7 @@ export const DataProvider = ({ children }) => {
 		};
 		fetchPosts();
 	}, []);
+
 	useEffect(() => {
 		const filteredPosts = posts.filter(
 			(post) =>
