@@ -1,0 +1,58 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "1st post",
+      "datetime": "july 30,2023 06:50:30 PM",
+      "body": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi, hic. Ea unde saepe, vitae quasi ipsa, eligendi quo omnis ex reprehenderit iure a"
+    },
+    {
+      "id": 2,
+      "title": "2nd post",
+      "datetime": "july 30,2023 06:50:30 PM",
+      "body": "hosam, ipsum dolor sit amet consectetur adipisicing elit. Sequi, hic. Ea unde saepe, vitae quasi ipsa, eligendi quo omnis ex reprehenderit iure a"
+    },
+    {
+      "id": 3,
+      "title": "3rd post",
+      "datetime": "july 30,2023 06:50:30 PM",
+      "body": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi, hic. Ea unde saepe, vitae quasi ipsa, eligendi quo omnis ex reprehenderit iure a"
+    },
+    {
+      "id": 4,
+      "title": "4th post",
+      "datetime": "May 18, 2023 11:26:24 PM",
+      "body": "ccccccc"
+    },
+    {
+      "id": 5,
+      "title": "fifth 5th el7",
+      "datetime": "May 18, 2023 11:55:37 PM",
+      "body": "this is after editing"
+    },
+    {
+      "id": 6,
+      "title": "hossam ",
+      "datetime": "May 26, 2023 6:58:52 PM",
+      "body": "hossam"
+    },
+    {
+      "id": 7,
+      "title": "new post ",
+      "datetime": "May 27, 2023 2:03:50 PM",
+      "body": "testing b4 changeing"
+    },
+    {
+      "id": 8,
+      "title": "adding post to test editing",
+      "datetime": "May 27, 2023 2:20:53 PM",
+      "body": "this will be edited now i edited it agin"
+    },
+    {
+      "id": 9,
+      "title": "last post b4 moving to redux",
+      "datetime": "May 27, 2023 4:12:27 PM",
+      "body": "now to redux"
+    }
+  ]
+}

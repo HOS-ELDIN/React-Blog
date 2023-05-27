@@ -6,6 +6,10 @@ a {
 	color: inherit;
 }
 
+ul {
+	padding: 0;
+}
+
 body {
 	margin: 0;
 	font-family: "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
@@ -23,6 +27,7 @@ body {
 
 	display: flex;
 	flex-direction: column;
+	box-shadow: 0 0 15px gray;
 }
 
 /* start header */
@@ -57,7 +62,6 @@ nav ul {
 	margin: 0;
 	text-transform: capitalize;
 	margin: auto;
-	padding: 0;
 }
 nav ul li {
 	cursor: pointer;
@@ -85,19 +89,12 @@ nav input {
 
 /* strat main for all pages */
 main {
-	padding-inline: 10px;
+	padding-inline: 1rem;
 	flex: 1;
+	overflow-y: auto;
 }
 
 /* start mainfor home page */
-
-.home {
-	overflow-y: scroll;
-	padding-inline: 1rem;
-}
-.home ul {
-	padding: 0;
-}
 
 .home ul li {
 	list-style: none;
