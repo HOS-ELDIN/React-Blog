@@ -213,3 +213,36 @@ footer p {
 	font-weight: 600;
 	text-transform: capitalize;
 }
+
+.loading {
+	height: calc(100% - 40px);
+	margin-block: 20px;
+
+	display: grid;
+	place-items: center;
+	/* gap: 20px; */
+
+	color: coral;
+	font-weight: 700;
+	font-size: x-large;
+}
+
+.circle {
+	border: 7px solid;
+	border-color: transparent coral;
+	border-radius: 50%;
+	aspect-ratio: 1;
+	width: 170px;
+
+	animation: rotate 1.5s infinite linear;
+}
+
+.loading p {
+	position: absolute;
+}
+
+@keyframes rotate {
+	100% {
+		transform: rotate(360deg);
+	}
+}

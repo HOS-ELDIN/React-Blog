@@ -10,6 +10,7 @@ export const DataProvider = ({ children }) => {
 	const [posts, setPosts] = useState([]);
 	const [search, setSearch] = useState("");
 	const [searchResults, setSearchResults] = useState([]);
+	const [isLoading, setIsLoading] = useState(true);
 
 	const navigate = useNavigate();
 
@@ -28,6 +29,7 @@ export const DataProvider = ({ children }) => {
 				});
 				// console.log(response);
 				setPosts(response.data);
+				setIsLoading(false);
 			} catch (err) {
 				console.log(err.reponse.data);
 				console.log(err.reponse.this.status);
@@ -60,6 +62,7 @@ export const DataProvider = ({ children }) => {
 				format,
 				api,
 				navigate,
+				isLoading,
 			}}
 		>
 			{children}

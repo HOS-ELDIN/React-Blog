@@ -9,11 +9,26 @@ const PostPage = () => {
 
 	const handleDelete = async (id) => {
 		try {
-			const response = await api.delete(`/posts/${id}`);
+			// const response = await api.delete(`/posts/${id}`);
 			const newPosts = posts.filter((post) => post.id !== id);
-			setPosts(newPosts);
+
+			const response = await api.put("/?meta=false", newPosts, {
+				headers: {
+					"Content-Type": "application/json",
+					"X-Master-Key":
+						"$2b$10$8af8yHYa/LJMqrWJLC/6iu29hjtZua92yI8.vlPwWZBj/SE4kz4TO",
+					"X-Access-Key":
+						"$2b$10$DQz6C.Oi0RiKI0DsXfxykejGH0qpGf/dob3KYU9Xni0xBZ2dUWwEa",
+				},
+			});
+
+			// console.log(response);
+
+			setPosts(response.data.record);
+
+			// setPosts(newPosts);
 			navigate("/");
-			console.log(response);
+			// console.log(response);
 		} catch (err) {
 			console.log(`Error:${err.message}`);
 		}

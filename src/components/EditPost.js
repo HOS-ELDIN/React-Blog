@@ -40,7 +40,7 @@ const EditPost = () => {
 				},
 			});
 
-			console.log(response);
+			// console.log(response);
 
 			setPosts(response.data.record);
 			// setPosts(

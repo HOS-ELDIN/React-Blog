@@ -1,12 +1,17 @@
 import React, { useContext } from "react";
 import Post from "./Post";
 import DataContext from "../context/DataContext";
+import Loading from "./Loading";
 
 const Home = () => {
 	const { searchResults } = useContext(DataContext);
+	const { isLoading } = useContext(DataContext);
 	return (
 		<main className="home">
-			{searchResults.length ? (
+			{/* {true ? ( */}
+			{isLoading ? (
+				<Loading />
+			) : searchResults.length ? (
 				<ul>
 					{searchResults.map((post) => (
 						<Post post={post} key={post.id} />

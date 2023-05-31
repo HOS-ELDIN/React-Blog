@@ -19,13 +19,29 @@ const NewPost = () => {
 		};
 
 		try {
-			const response = await api.post("/posts", newPost);
-			const newPostsList = [...posts, response.data];
-			setPosts(newPostsList);
+			// const response = await api.post("/posts", newPost);
+			const newPostsList = [...posts, newPost];
+
+			const response = await api.put("/?meta=false", newPostsList, {
+				headers: {
+					"Content-Type": "application/json",
+					"X-Master-Key":
+						"$2b$10$8af8yHYa/LJMqrWJLC/6iu29hjtZua92yI8.vlPwWZBj/SE4kz4TO",
+					"X-Access-Key":
+						"$2b$10$DQz6C.Oi0RiKI0DsXfxykejGH0qpGf/dob3KYU9Xni0xBZ2dUWwEa",
+				},
+			});
+
+			// console.log(response);
+
+			setPosts(response.data.record);
+			// setPosts(newPostsList);
+
+			
 			setNewPostTitle("");
 			setNewPostBody("");
 			navigate(`/post/${newPostId}`);
-			console.log(response.data);
+			// console.log(response.data);
 		} catch (err) {
 			console.log(`Error:${err.message}`);
 		}
